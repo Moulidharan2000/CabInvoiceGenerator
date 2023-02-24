@@ -21,9 +21,13 @@ public class CabInvoice {
 			double time = scan.nextDouble();
 			amount = distance * cost_perkm + time * cost_perminute + temp;
 			temp = amount;
-		}		
-		if(amount >= minimum_fare) 
+		}
+		double average = amount / rides;
+		if(amount >= minimum_fare) {
+			System.out.println("Total Rides : " + rides);
 			System.out.println("Total Fare : " + amount);
+			System.out.println("Average Fare for Rides : " + average);
+		}
 		else
 			System.out.println("No Rides for Below the Minimum Fare....");
 	}
