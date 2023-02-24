@@ -10,12 +10,18 @@ public class CabInvoice {
 		int cost_perminute = 1;
 		int minimum_fare = 5;
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Enter the Distance in KiloMeter : ");
-		double distance = scan.nextDouble();
-		System.out.print("Enter the Time in Minutes : ");
-		double time = scan.nextDouble();
-		double amount = distance * cost_perkm + time * cost_perminute;
-		
+		System.out.print("Enter the Number of Rides : ");
+		int rides = scan.nextInt();
+		double amount = 0;
+		double temp = 0;
+		for(int i=0; i<rides; i++) {
+			System.out.print("Enter the Distance in KiloMeter : ");
+			double distance = scan.nextDouble();
+			System.out.print("Enter the Time in Minutes : ");
+			double time = scan.nextDouble();
+			amount = distance * cost_perkm + time * cost_perminute + temp;
+			temp = amount;
+		}		
 		if(amount >= minimum_fare) 
 			System.out.println("Total Fare : " + amount);
 		else
