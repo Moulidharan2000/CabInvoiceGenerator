@@ -10,6 +10,8 @@ public class CabInvoice {
 		int cost_perminute = 1;
 		int minimum_fare = 5;
 		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the User ID : ");
+		int id = scan.nextInt();
 		System.out.print("Enter the Number of Rides : ");
 		int rides = scan.nextInt();
 		double amount = 0;
@@ -24,6 +26,7 @@ public class CabInvoice {
 		}
 		double average = amount / rides;
 		if(amount >= minimum_fare) {
+			System.out.println("User ID : "+id);
 			System.out.println("Total Rides : " + rides);
 			System.out.println("Total Fare : " + amount);
 			System.out.println("Average Fare for Rides : " + average);
